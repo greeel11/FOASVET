@@ -16,6 +16,7 @@ class _AddState extends State<Add> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Post an Aspiration'),
+          backgroundColor: Color.fromRGBO(4, 116, 132, 1),
           actions: <Widget>[
             FlatButton(
                 textColor: Colors.white,
