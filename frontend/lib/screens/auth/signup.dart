@@ -33,7 +33,7 @@ class _SignUpState extends State<SignUp> {
                 }),
               ),
               TextFormField(
-                decoration: InputDecoration(hintText: "Type your password"),
+                decoration: InputDecoration(hintText: "Type password"),
                 obscureText: true,
                 onChanged: (val) => setState(() {
                   password = val;
