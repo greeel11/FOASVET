@@ -25,7 +25,7 @@ class _ItemPostState extends State<ItemPost> {
   Widget build(BuildContext context) {
     return ListTile(
       title: Padding(
-          padding: EdgeInsets.fromLTRB(0, 15, 0, 15),
+          padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -50,7 +50,7 @@ class _ItemPostState extends State<ItemPost> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 15, 0, 15),
+            padding: EdgeInsets.fromLTRB(0, 16, 0, 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
