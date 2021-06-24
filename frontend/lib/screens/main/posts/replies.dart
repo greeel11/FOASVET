@@ -46,7 +46,7 @@ class _RepliesState extends State<Replies> {
                         ),
                         FlatButton(
                             textColor: Colors.white,
-                            color: Colors.blue,
+                            color: Color.fromRGBO(4, 116, 132, 1),
                             onPressed: () async {
                               await _postService.reply(args, text);
                               _textController.text = '';

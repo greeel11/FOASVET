@@ -61,15 +61,15 @@ class _ListPostsState extends State<ListPosts> {
                 } //stream builder to get user like
 
                 return StreamBuilder(
-                    stream: _postService.getCurrentUserRetweet(post),
+                    stream: _postService.getCurrentUserretweet(post),
                     builder: (BuildContext context,
-                        AsyncSnapshot<bool> snapshotRetweet) {
+                        AsyncSnapshot<bool> snapshotretweet) {
                       if (!snapshotLike.hasData) {
                         return Center(child: CircularProgressIndicator());
                       }
 
                       return ItemPost(post, snapshotUser, snapshotLike,
-                          snapshotRetweet, retweet);
+                          snapshotretweet, retweet);
                     });
               });
         });

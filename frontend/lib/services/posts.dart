@@ -137,7 +137,7 @@ class PostService {
     });
   }
 
-  Stream<bool> getCurrentUserRetweet(PostModel post) {
+  Stream<bool> getCurrentUserretweet(PostModel post) {
     return FirebaseFirestore.instance
         .collection("posts")
         .doc(post.id)

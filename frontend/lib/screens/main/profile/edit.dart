@@ -35,6 +35,7 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(4, 116, 132, 1),
         actions: [
           FlatButton(
               onPressed: () async {
@@ -42,7 +43,10 @@ class _EditState extends State<Edit> {
                     _bannerImage, _profileImage, name);
                 Navigator.pop(context);
               },
-              child: Text('Save'))
+              child: Text('Save',
+                  style: TextStyle(
+                    color: Colors.white,
+                  )))
         ],
       ),
       body: Container(

@@ -75,7 +75,11 @@ class _ProfileState extends State<Profile> {
                                       onPressed: () {
                                         Navigator.pushNamed(context, '/edit');
                                       },
-                                      child: Text("Edit Profile"))
+                                      child: Text("Edit Profile",
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(4, 116, 132, 1),
+                                          )))
                                 else if (FirebaseAuth
                                             .instance.currentUser.uid !=
                                         uid &&
@@ -84,7 +88,11 @@ class _ProfileState extends State<Profile> {
                                       onPressed: () {
                                         _userService.followUser(uid);
                                       },
-                                      child: Text("Follow"))
+                                      child: Text("Follow",
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(4, 116, 132, 1),
+                                          )))
                                 else if (FirebaseAuth
                                             .instance.currentUser.uid !=
                                         uid &&
@@ -93,7 +101,11 @@ class _ProfileState extends State<Profile> {
                                       onPressed: () {
                                         _userService.unfollowUser(uid);
                                       },
-                                      child: Text("Unfollow")),
+                                      child: Text("Unfollow",
+                                          style: TextStyle(
+                                            color:
+                                                Color.fromRGBO(4, 116, 132, 1),
+                                          ))),
                               ]),
                           Align(
                             alignment: Alignment.centerLeft,

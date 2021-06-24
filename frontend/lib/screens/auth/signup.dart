@@ -18,9 +18,9 @@ class _SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            backgroundColor: Color.fromRGBO(254, 219, 118, 1),
+            backgroundColor: Color.fromRGBO(4, 116, 132, 1),
             // elevation: 8,
-            title: Text("Sign Up")),
+            title: Text("FOASVET")),
         body: Container(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
           child: new Form(
