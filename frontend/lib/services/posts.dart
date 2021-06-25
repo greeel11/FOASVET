@@ -174,31 +174,39 @@ class PostService {
   }
 
   Future<List<PostModel>> getFeed() async {
-    List<String> usersFollowing = await UserService() //['uid1', 'uid2']
+    List<String> usersFollowing = await UserService()
         .getUserFollowing(FirebaseAuth.instance.currentUser.uid);
 
-    var splitUsersFollowing = partition<dynamic>(usersFollowing, 10);
-    inspect(splitUsersFollowing);
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+        .collection('posts')
+        .where('creator', whereIn: usersFollowing)
+        .orderBy('timestamp', descending: true)
+        .get();
 
-    List<PostModel> feedList = [];
+    return _postListFromSnapshot(querySnapshot);
 
-    for (int i = 0; i < splitUsersFollowing.length; i++) {
-      inspect(splitUsersFollowing.elementAt(i));
-      QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-          .collection('posts')
-          .where('creator', whereIn: splitUsersFollowing.elementAt(i))
-          .orderBy('timestamp', descending: true)
-          .get();
+    // var splitUsersFollowing = partition<dynamic>(usersFollowing, 10);
+    // inspect(splitUsersFollowing);
 
-      feedList.addAll(_postListFromSnapshot(querySnapshot));
-    }
+    // List<PostModel> feedList = [];
 
-    feedList.sort((a, b) {
-      var adate = a.timestamp;
-      var bdate = b.timestamp;
-      return bdate.compareTo(adate);
-    });
+    // for (int i = 0; i < splitUsersFollowing.length; i++) {
+    //   inspect(splitUsersFollowing.elementAt(i));
+    //   QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+    //       .collection('posts')
+    //       .where('creator', whereIn: splitUsersFollowing.elementAt(i))
+    //       .orderBy('timestamp', descending: true)
+    //       .get();
 
-    return feedList;
+    //   feedList.addAll(_postListFromSnapshot(querySnapshot));
+    // }
+
+    // feedList.sort((a, b) {
+    //   var adate = a.timestamp;
+    //   var bdate = b.timestamp;
+    //   return bdate.compareTo(adate);
+    // });
+
+    // return feedList;
   }
 }

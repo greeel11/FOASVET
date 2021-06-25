@@ -40,6 +40,7 @@ class _ProfileState extends State<Profile> {
               headerSliverBuilder: (context, _) {
                 return [
                   SliverAppBar(
+                    backgroundColor: Color.fromRGBO(4, 116, 132, 1),
                     floating: false,
                     pinned: true,
                     expandedHeight: 130,
