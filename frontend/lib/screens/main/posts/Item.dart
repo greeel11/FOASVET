@@ -7,11 +7,11 @@ class ItemPost extends StatefulWidget {
   final PostModel post;
   final AsyncSnapshot<UserModel> snapshotUser;
   final AsyncSnapshot<bool> snapshotLike;
-  final AsyncSnapshot<bool> snapshotretweet;
-  final bool retweet;
+  final AsyncSnapshot<bool> snapshotrepost;
+  final bool repost;
 
-  ItemPost(this.post, this.snapshotUser, this.snapshotLike,
-      this.snapshotretweet, this.retweet,
+  ItemPost(this.post, this.snapshotUser, this.snapshotLike, this.snapshotrepost,
+      this.repost,
       {Key key})
       : super(key: key);
 
@@ -29,8 +29,7 @@ class _ItemPostState extends State<ItemPost> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (widget.snapshotretweet.data || widget.retweet)
-                Text("retweet"),
+              if (widget.snapshotrepost.data || widget.repost) Text("repost"),
               SizedBox(height: 20),
               Row(
                 children: [
@@ -76,14 +75,14 @@ class _ItemPostState extends State<ItemPost> {
                       children: [
                         IconButton(
                             icon: new Icon(
-                                widget.snapshotretweet.data
+                                widget.snapshotrepost.data
                                     ? Icons.cancel
                                     : Icons.repeat,
                                 color: Color.fromRGBO(4, 116, 132, 1),
                                 size: 30.0),
-                            onPressed: () => _postService.retweet(
-                                widget.post, widget.snapshotretweet.data)),
-                        Text(widget.post.retweetsCount.toString())
+                            onPressed: () => _postService.repost(
+                                widget.post, widget.snapshotrepost.data)),
+                        Text(widget.post.repostsCount.toString())
                       ],
                     ),
                     Row(

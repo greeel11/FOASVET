@@ -28,24 +28,24 @@ exports.deleteLike = functions.firestore.document('/posts/{postId}/likes/{userId
 })
 
 
-exports.addRetweet = functions.firestore.document('/posts/{postId}/retweets/{userId}')
+exports.addRepost = functions.firestore.document('/posts/{postId}/reposts/{userId}')
 .onCreate((snap, context) => {
     return db
     .collection("posts")
     .doc(context.params.postId)
     .update(
         {
-            retweetsCount: admin.firestore.FieldValue.increment(1)
+            repostsCount: admin.firestore.FieldValue.increment(1)
         })
 })
 
-exports.deleteRetweet = functions.firestore.document('/posts/{postId}/retweets/{userId}')
+exports.deleteRepost = functions.firestore.document('/posts/{postId}/reposts/{userId}')
 .onDelete((snap, context) => {
     return db
     .collection("posts")
     .doc(context.params.postId)
     .update(
         {
-            retweetsCount: admin.firestore.FieldValue.increment(-1)
+            repostsCount: admin.firestore.FieldValue.increment(-1)
         })
 })

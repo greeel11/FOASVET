@@ -27,7 +27,7 @@ class _ListPostsState extends State<ListPosts> {
       itemCount: posts.length,
       itemBuilder: (context, index) {
         final post = posts[index];
-        if (post.retweet) {
+        if (post.repost) {
           return FutureBuilder(
               future: _postService.getPostById(post.originalId),
               builder: (BuildContext context,
@@ -43,7 +43,7 @@ class _ListPostsState extends State<ListPosts> {
     );
   }
 
-  StreamBuilder<UserModel> mainPost(PostModel post, bool retweet) {
+  StreamBuilder<UserModel> mainPost(PostModel post, bool repost) {
     return StreamBuilder(
         stream: _userService.getUserInfo(post.creator),
         builder: (BuildContext context, AsyncSnapshot<UserModel> snapshotUser) {
@@ -61,15 +61,15 @@ class _ListPostsState extends State<ListPosts> {
                 } //stream builder to get user like
 
                 return StreamBuilder(
-                    stream: _postService.getCurrentUserretweet(post),
+                    stream: _postService.getCurrentUserrepost(post),
                     builder: (BuildContext context,
-                        AsyncSnapshot<bool> snapshotretweet) {
+                        AsyncSnapshot<bool> snapshotrepost) {
                       if (!snapshotLike.hasData) {
                         return Center(child: CircularProgressIndicator());
                       }
 
                       return ItemPost(post, snapshotUser, snapshotLike,
-                          snapshotretweet, retweet);
+                          snapshotrepost, repost);
                     });
               });
         });
