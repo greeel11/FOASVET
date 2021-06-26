@@ -57,7 +57,7 @@ class _EditState extends State<Edit> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FlatButton(
+                MaterialButton(
                   onPressed: () => getImage(0),
                   child: _profileImage == null
                       ? Icon(Icons.person)
@@ -72,7 +72,7 @@ class _EditState extends State<Edit> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                FlatButton(
+                MaterialButton(
                   onPressed: () => getImage(1),
                   child: _bannerImage == null
                       ? Icon(Icons.person)
