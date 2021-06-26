@@ -19,7 +19,7 @@ class _SignUpState extends State<SignUp> {
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Color.fromRGBO(4, 116, 132, 1),
-            // elevation: 8,
+            elevation: 8,
             title: Text("FOASVET")),
         body: Container(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
@@ -39,14 +39,33 @@ class _SignUpState extends State<SignUp> {
                   password = val;
                 }),
               ),
-              RaisedButton(
-                  child: Text('Signup'),
-                  onPressed: () async =>
-                      {_authService.signUp(email, password)}),
-              RaisedButton(
-                  child: Text('Signin'),
-                  onPressed: () async =>
-                      {_authService.signIn(email, password)}),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 16, 0, 0),
+                child: Column(
+                  children: [
+                    OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: Color.fromRGBO(4, 116, 132, 1),
+                          side: BorderSide(
+                              color: Color.fromRGBO(4, 116, 132, 1), width: 2),
+                        ),
+                        child: Text('Log In'),
+                        onPressed: () async =>
+                            {_authService.signIn(email, password)}),
+                    OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          primary: Color.fromRGBO(4, 116, 132, 1),
+                          backgroundColor: Colors.white,
+                          side: BorderSide(
+                              color: Color.fromRGBO(4, 116, 132, 1), width: 2),
+                        ),
+                        child: Text('Sign Up'),
+                        onPressed: () async =>
+                            {_authService.signUp(email, password)}),
+                  ],
+                ),
+              ),
             ],
           )),
         ));
