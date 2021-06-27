@@ -75,7 +75,7 @@ class _EditState extends State<Edit> {
                 MaterialButton(
                   onPressed: () => getImage(1),
                   child: _bannerImage == null
-                      ? Icon(Icons.person)
+                      ? Icon(Icons.image)
                       : Image.file(
                           _bannerImage,
                           height: 100,
