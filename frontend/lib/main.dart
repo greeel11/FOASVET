@@ -37,7 +37,10 @@ class MyApp extends StatelessWidget {
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return Text("Loading");
+        return Text(
+          "Loading",
+          style: TextStyle(fontFamily: 'Poppins'),
+        );
       },
     );
   }

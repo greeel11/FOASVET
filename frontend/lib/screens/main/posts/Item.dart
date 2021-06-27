@@ -40,7 +40,10 @@ class _ItemPostState extends State<ItemPost> {
                               widget.snapshotUser.data.profileImageUrl))
                       : Icon(Icons.person, size: 40),
                   SizedBox(width: 10),
-                  Text(widget.snapshotUser.data.name)
+                  Text(
+                    widget.snapshotUser.data.name,
+                    style: TextStyle(fontFamily: 'Poppins'),
+                  )
                 ],
               ),
             ],
@@ -53,9 +56,15 @@ class _ItemPostState extends State<ItemPost> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.post.text),
+                Text(
+                  widget.post.text,
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ),
                 SizedBox(height: 20),
-                Text(widget.post.timestamp.toDate().toString()),
+                Text(
+                  widget.post.timestamp.toDate().toString(),
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ),
                 SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -82,7 +91,10 @@ class _ItemPostState extends State<ItemPost> {
                                 size: 30.0),
                             onPressed: () => _postService.repost(
                                 widget.post, widget.snapshotrepost.data)),
-                        Text(widget.post.repostsCount.toString())
+                        Text(
+                          widget.post.repostsCount.toString(),
+                          style: TextStyle(fontFamily: 'Poppins'),
+                        )
                       ],
                     ),
                     Row(
@@ -98,7 +110,10 @@ class _ItemPostState extends State<ItemPost> {
                               _postService.likePost(
                                   widget.post, widget.snapshotLike.data);
                             }),
-                        Text(widget.post.likesCount.toString())
+                        Text(
+                          widget.post.likesCount.toString(),
+                          style: TextStyle(fontFamily: 'Poppins'),
+                        )
                       ],
                     )
                   ],

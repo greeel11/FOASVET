@@ -48,7 +48,7 @@ class _EditState extends State<Edit> {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         child: new Form(
             child: Column(
           children: [
@@ -64,7 +64,10 @@ class _EditState extends State<Edit> {
                           height: 100,
                         ),
                 ),
-                Text('Change your profile picture'),
+                Text(
+                  'Change your profile picture',
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ),
               ],
             ),
             Row(
@@ -79,11 +82,17 @@ class _EditState extends State<Edit> {
                           height: 100,
                         ),
                 ),
-                Text('Change your banner image'),
+                Text(
+                  'Change your banner image',
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ),
               ],
             ),
             TextFormField(
-              decoration: InputDecoration(hintText: "Change your username"),
+              decoration: InputDecoration(
+                hintText: "Change your username",
+                hintStyle: TextStyle(fontFamily: 'Poppins'),
+              ),
               onChanged: (val) => setState(() {
                 name = val;
               }),

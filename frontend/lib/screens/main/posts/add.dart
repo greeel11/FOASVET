@@ -15,7 +15,10 @@ class _AddState extends State<Add> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Post an Aspiration'),
+          title: Text(
+            'Post an Aspiration',
+            style: TextStyle(fontFamily: 'Poppins'),
+          ),
           backgroundColor: Color.fromRGBO(4, 116, 132, 1),
           actions: <Widget>[
             FlatButton(
@@ -24,13 +27,17 @@ class _AddState extends State<Add> {
                   _postService.savePost(text);
                   Navigator.pop(context);
                 },
-                child: Text('Post'))
+                child: Text(
+                  'Post',
+                  style: TextStyle(fontFamily: 'Poppins'),
+                ))
           ],
         ),
         body: Container(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: new Form(
                 child: TextFormField(
+              style: TextStyle(fontFamily: 'Poppins'),
               keyboardType: TextInputType.multiline,
               textInputAction: TextInputAction.newline,
               minLines: 2,

@@ -34,6 +34,7 @@ class _RepliesState extends State<Replies> {
                       children: [
                         Form(
                             child: TextFormField(
+                          style: TextStyle(fontFamily: 'Poppins'),
                           controller: _textController,
                           onChanged: (val) {
                             setState(() {

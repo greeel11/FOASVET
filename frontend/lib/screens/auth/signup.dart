@@ -20,19 +20,24 @@ class _SignUpState extends State<SignUp> {
         appBar: AppBar(
             backgroundColor: Color.fromRGBO(4, 116, 132, 1),
             elevation: 8,
-            title: Text("FOASVET")),
+            title: Text(
+              "FOASVET",
+              style: TextStyle(fontFamily: 'Poppins'),
+            )),
         body: Container(
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
           child: new Form(
               child: Column(
             children: [
               TextFormField(
+                style: TextStyle(fontFamily: 'Poppins'),
                 decoration: InputDecoration(hintText: "Type your email"),
                 onChanged: (val) => setState(() {
                   email = val;
                 }),
               ),
               TextFormField(
+                style: TextStyle(fontFamily: 'Poppins'),
                 decoration: InputDecoration(hintText: "Type your password"),
                 obscureText: true,
                 onChanged: (val) => setState(() {

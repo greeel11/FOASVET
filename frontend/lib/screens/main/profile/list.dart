@@ -37,7 +37,10 @@ class _ListUsersState extends State<ListUsers> {
                             )
                           : Icon(Icons.person, size: 40),
                       SizedBox(width: 10),
-                      Text(user.name)
+                      Text(
+                        user.name,
+                        style: TextStyle(fontFamily: 'Poppins'),
+                      )
                     ])),
                 const Divider(
                   thickness: 1,

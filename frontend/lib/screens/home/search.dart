@@ -27,7 +27,10 @@ class _SearchState extends State<Search> {
                   search = text;
                 });
               },
-              decoration: InputDecoration(hintText: 'Search...'),
+              decoration: InputDecoration(
+                hintText: 'Search...',
+                hintStyle: TextStyle(fontFamily: 'Poppins'),
+              ),
             ),
           ),
           ListUsers()
