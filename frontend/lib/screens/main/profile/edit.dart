@@ -44,9 +44,7 @@ class _EditState extends State<Edit> {
                 Navigator.pop(context);
               },
               child: Text('Save',
-                  style: TextStyle(
-                    color: Colors.white,
-                  )))
+                  style: TextStyle(color: Colors.white, fontFamily: 'Poppins')))
         ],
       ),
       body: Container(

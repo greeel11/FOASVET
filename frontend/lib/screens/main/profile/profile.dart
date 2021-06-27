@@ -78,9 +78,9 @@ class _ProfileState extends State<Profile> {
                                       },
                                       child: Text("Edit Profile",
                                           style: TextStyle(
-                                            color:
-                                                Color.fromRGBO(4, 116, 132, 1),
-                                          )))
+                                              color: Color.fromRGBO(
+                                                  4, 116, 132, 1),
+                                              fontFamily: 'Poppins')))
                                 else if (FirebaseAuth
                                             .instance.currentUser.uid !=
                                         uid &&
@@ -91,9 +91,9 @@ class _ProfileState extends State<Profile> {
                                       },
                                       child: Text("Follow",
                                           style: TextStyle(
-                                            color:
-                                                Color.fromRGBO(4, 116, 132, 1),
-                                          )))
+                                              color: Color.fromRGBO(
+                                                  4, 116, 132, 1),
+                                              fontFamily: 'Poppins')))
                                 else if (FirebaseAuth
                                             .instance.currentUser.uid !=
                                         uid &&
@@ -104,9 +104,9 @@ class _ProfileState extends State<Profile> {
                                       },
                                       child: Text("Unfollow",
                                           style: TextStyle(
-                                            color:
-                                                Color.fromRGBO(4, 116, 132, 1),
-                                          ))),
+                                              color: Color.fromRGBO(
+                                                  4, 116, 132, 1),
+                                              fontFamily: 'Poppins'))),
                               ]),
                           Align(
                             alignment: Alignment.centerLeft,

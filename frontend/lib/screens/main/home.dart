@@ -26,7 +26,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text(
+          "Home",
+          style: TextStyle(fontFamily: 'Poppins'),
+        ),
         backgroundColor: Color.fromRGBO(4, 116, 132, 1),
       ),
       floatingActionButton: FloatingActionButton(
@@ -43,20 +46,25 @@ class _HomeState extends State<Home> {
                 child: Text(
                   "FOASVET",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Color.fromRGBO(254, 219, 118, 1)),
+                  style: TextStyle(
+                      color: Color.fromRGBO(254, 219, 118, 1),
+                      fontFamily: 'Poppins'),
                 ),
               ),
               decoration: BoxDecoration(color: Color.fromRGBO(4, 116, 132, 1)),
             ),
             ListTile(
-              title: Text('Profile'),
+              title: Text(
+                'Profile',
+                style: TextStyle(fontFamily: 'Poppins'),
+              ),
               onTap: () {
                 Navigator.pushNamed(context, '/profile',
                     arguments: FirebaseAuth.instance.currentUser.uid);
               },
             ),
             ListTile(
-              title: Text('Logout'),
+              title: Text('Logout', style: TextStyle(fontFamily: 'Poppins')),
               onTap: () async {
                 _authService.signOut();
               },
