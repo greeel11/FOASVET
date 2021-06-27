@@ -29,7 +29,12 @@ class _AddState extends State<Add> {
         ),
         body: Container(
             padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            child: new Form(child: TextFormField(
+            child: new Form(
+                child: TextFormField(
+              keyboardType: TextInputType.multiline,
+              textInputAction: TextInputAction.newline,
+              minLines: 1,
+              maxLines: 5,
               onChanged: (val) {
                 setState(() {
                   text = val;

@@ -185,28 +185,28 @@ class PostService {
 
     return _postListFromSnapshot(querySnapshot);
 
-    //   var splitUsersFollowing = partition<dynamic>(usersFollowing, 10);
-    //   inspect(splitUsersFollowing);
+    var splitUsersFollowing = partition<dynamic>(usersFollowing, 10);
+    inspect(splitUsersFollowing);
 
-    //   List<PostModel> feedList = [];
+    List<PostModel> feedList = [];
 
-    //   for (int i = 0; i < splitUsersFollowing.length; i++) {
-    //     inspect(splitUsersFollowing.elementAt(i));
-    //     QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-    //         .collection('posts')
-    //         .where('creator', whereIn: splitUsersFollowing.elementAt(i))
-    //         .orderBy('timestamp', descending: true)
-    //         .get();
+    for (int i = 0; i < splitUsersFollowing.length; i++) {
+      inspect(splitUsersFollowing.elementAt(i));
+      QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+          .collection('posts')
+          .where('creator', whereIn: splitUsersFollowing.elementAt(i))
+          .orderBy('timestamp', descending: true)
+          .get();
 
-    //     feedList.addAll(_postListFromSnapshot(querySnapshot));
-    //   }
+      feedList.addAll(_postListFromSnapshot(querySnapshot));
+    }
 
-    //   feedList.sort((a, b) {
-    //     var adate = a.timestamp;
-    //     var bdate = b.timestamp;
-    //     return bdate.compareTo(adate);
-    //   });
+    feedList.sort((a, b) {
+      var adate = a.timestamp;
+      var bdate = b.timestamp;
+      return bdate.compareTo(adate);
+    });
 
-    //   return feedList;
+    return feedList;
   }
 }
