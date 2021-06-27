@@ -20,7 +20,7 @@ class _EditState extends State<Edit> {
   String name = '';
 
   Future getImage(int type) async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
     setState(() {
       if (pickedFile != null && type == 0) {
         _profileImage = File(pickedFile.path);
