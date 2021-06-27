@@ -33,7 +33,7 @@ class _AddState extends State<Add> {
                 child: TextFormField(
               keyboardType: TextInputType.multiline,
               textInputAction: TextInputAction.newline,
-              minLines: 1,
+              minLines: 2,
               maxLines: 5,
               onChanged: (val) {
                 setState(() {
