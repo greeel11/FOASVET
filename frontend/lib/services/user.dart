@@ -59,7 +59,7 @@ class UserService {
         .orderBy("name")
         .startAt([search])
         .endAt([search + '\uf8ff'])
-        .limit(10)
+        .limit(3)
         .snapshots()
         .map(_userListFromQuerySnapshot);
   }

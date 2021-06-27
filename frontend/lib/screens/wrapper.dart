@@ -22,12 +22,15 @@ class Wrapper extends StatelessWidget {
     }
 
     //show main system routes
-    return MaterialApp(initialRoute: '/', routes: {
-      '/': (context) => Home(),
-      '/add': (context) => Add(),
-      '/profile': (context) => Profile(),
-      '/edit': (context) => Edit(),
-      '/replies': (context) => Replies()
-    });
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: {
+          '/': (context) => Home(),
+          '/add': (context) => Add(),
+          '/profile': (context) => Profile(),
+          '/edit': (context) => Edit(),
+          '/replies': (context) => Replies()
+        });
   }
 }
